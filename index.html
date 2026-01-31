@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a2c.in | Always 2 Code</title>
+    <style>
+        :root {
+            --neon-green: #00ff41;
+            --bg-black: #050505;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--neon-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* The Content Wrapper */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 10; /* Above background, but visual lines will still overlay */
+        }
+
+        .typing-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+            border-right: 4px solid var(--neon-green);
+            animation: 
+                typing 1.2s steps(6, end) forwards,
+                blink 0.8s step-end infinite;
+        }
+
+        p {
+            font-size: clamp(0.8rem, 3vw, 1.2rem);
+            color: var(--neon-green);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 15px 0 10px 0;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 1.5s forwards;
+        }
+
+        /* The Email Link with Square Hover Effect */
+        .contact-link {
+            text-decoration: none;
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            opacity: 0;
+            padding: 8px 15px;
+            border: 1px solid transparent; /* The "Square" boundary */
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out 2.2s forwards;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .contact-link:hover {
+            background: rgba(0, 255, 65, 0.1);
+            text-shadow: 0 0 10px var(--neon-green);
+            border: 1px solid var(--neon-green); /* Becomes a visible square on hover */
+            opacity: 1 !important;
+        }
+
+        /* THE SCANLINE OVERLAY - Visual Only */
+        body::after {
+            content: " ";
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none; /* Crucial: allows clicking through the lines */
+            z-index: 100; 
+        }
+
+        /* Animations */
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { 50% { border-color: transparent; } }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 0.7; transform: translateY(0); } 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="typing-container">
+            <h1>a2c.in</h1>
+        </div>
+        <p>Always 2 Code</p>
+        <a class="contact-link" href="mailto:root@a2c.in">
+            &#9993; root@a2c.in
+        </a>
+    </div>
+
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+
+</body>
+</html>
