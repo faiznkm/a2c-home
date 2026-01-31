@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - System Error</title>
+    <style>
+        :root {
+            --error-red: #ff3e3e; /* Red for error, or stay green if you prefer */
+            --neon-green: #00ff41;
+            --bg-black: #050505;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--neon-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 15vw, 8rem);
+            margin: 0;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+        }
+
+        p {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 10px 0 30px 0;
+            opacity: 0.8;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: var(--bg-black);
+            background-color: var(--neon-green);
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            background-color: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        /* The CRT Scanline effect from your main page */
+        body::after {
+            content: " ";
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+            z-index: 100; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>404</h1>
+        <p>Resource Not Found / Access Denied</p>
+        <a class="home-link" href="/">Return to Root</a>
+    </div>
+
+</body>
+</html>
